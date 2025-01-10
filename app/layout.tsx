@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const inter = Inter({
@@ -25,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <SpeedInsights />
       <body
         className={`${merriweather.variable} ${inter.variable} antialiased`}
       >
