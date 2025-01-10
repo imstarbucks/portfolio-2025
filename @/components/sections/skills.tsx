@@ -94,7 +94,7 @@ const Skill = ({
 
   const textVariants = {
     initial: {
-      color: 'white',
+      color: '#ffffff',
       x: 0,
     },
     onhover: {

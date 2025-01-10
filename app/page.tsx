@@ -222,7 +222,7 @@ export default function Home() {
                   <motion.a
                     whileHover={{
                       skewX: -15,
-                      color: 'white',
+                      color: '#ffffff',
                       transition: {
                         duration: 0.2,
                       },
