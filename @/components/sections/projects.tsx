@@ -7,6 +7,7 @@ import { projectsCollections } from '@/utils/const'
 import { Badge } from '../ui/badge'
 import Link from 'next/link'
 import ProjectDrawer from './project-drawer'
+import { Download, ArrowRightCircle } from 'lucide-react'
 
 const Projects = () => {
   return (
@@ -23,6 +24,16 @@ const Projects = () => {
           />
         ))}
       </ul>
+      <div className="mt-12 flex justify-center">
+        <Link
+          href={'/projects'}
+          className="group relative flex w-fit items-center justify-center gap-2 text-2xl text-white"
+        >
+          View More Projects{' '}
+          <ArrowRightCircle className="size-6 transition-transform group-hover:translate-x-4" />
+          <div className="absolute bottom-0 top-auto h-2 w-full translate-y-2 bg-amber-300"></div>
+        </Link>
+      </div>
     </section>
   )
 }

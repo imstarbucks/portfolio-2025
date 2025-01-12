@@ -20,17 +20,24 @@ import {
 import { X } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from '../ui/button'
+import { cn } from '@/utils'
 
 interface ProjectDrawerProps {
   project: ProjectType
+  className?: string
 }
 
-const ProjectDrawer = ({ project }: ProjectDrawerProps) => {
+const ProjectDrawer = ({ project, className }: ProjectDrawerProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
-      <DrawerTrigger className="mt-8 block font-serif hover:underline md:text-xl">
+      <DrawerTrigger
+        className={cn(
+          'mt-8 block font-serif hover:underline md:text-xl',
+          className
+        )}
+      >
         View Details
       </DrawerTrigger>
       <DrawerContent data-vaul-no-drag="true" className="bg-slate-200">
@@ -60,10 +67,10 @@ const ProjectDrawer = ({ project }: ProjectDrawerProps) => {
           <h3 className="mx-auto mb-6 mt-12 w-full px-4 font-serif text-2xl font-bold italic md:mt-24 md:w-4/5 md:text-4xl lg:text-6xl">
             Project Highlights
           </h3>
-          <div className="mx-auto mt-4 grid w-full grid-cols-1 gap-8 px-4 md:mt-12 md:w-4/5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-4 grid w-full max-w-[2160px] grid-cols-1 gap-8 px-4 md:mt-12 md:w-4/5 md:grid-cols-2 lg:w-full lg:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3">
             {project.projectDetails?.map((projectDetail, index) => (
               <div
-                className="group relative rounded-lg bg-amber-300/75 p-4"
+                className="relative flex flex-col justify-between rounded-lg bg-amber-300/75 p-4"
                 key={'projectDetail' + index}
               >
                 {projectDetail.images.length > 1 ? (
