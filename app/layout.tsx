@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/react'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 import Footer from '@/@/components/sections/footer'
 
@@ -34,9 +34,10 @@ export default function RootLayout({
       >
         <SpeedInsights />
         <Analytics />
-        <GoogleTagManager gtmId="GTM-53NMM2H6" />
         {children}
         <Footer />
+        <GoogleTagManager gtmId="GTM-53NMM2H6" />
+        <GoogleAnalytics gaId="G-BRY05L4B7W" />
       </body>
     </html>
   )
