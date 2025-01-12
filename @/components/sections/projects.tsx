@@ -1,15 +1,20 @@
+'use client'
+
 import Image from 'next/image'
 import * as motion from 'motion/react-client'
 import { ProjectType } from '@/utils/types'
 import { projectsCollections } from '@/utils/const'
 import { Badge } from '../ui/badge'
 import Link from 'next/link'
+import ProjectDrawer from './project-drawer'
 
 const Projects = () => {
   return (
-    <section className="container py-24">
-      <h2 className="mb-12 font-serif text-8xl italic text-white">Projects</h2>
-      <ul className="space-y-48">
+    <section className="container px-6 py-12 md:py-24 2xl:px-0">
+      <h2 className="mb-12 font-serif text-4xl italic text-white md:text-6xl xl:text-8xl">
+        Projects
+      </h2>
+      <ul className="space-y-20 md:space-y-24 lg:space-y-48">
         {projectsCollections.slice(0, 4).map((project, index) => (
           <ProjectContainer
             key={'project' + index}
@@ -50,43 +55,53 @@ const ProjectContainer = ({ project, index }: ProjectContainerProps) => {
   }
 
   return (
-    <div className="group grid gap-x-12 gap-y-12 text-white lg:grid-cols-3">
-      <div className="order-2 lg:col-span-1 lg:group-even:order-1">
+    <div className="group grid gap-x-12 gap-y-12 text-white lg:grid-cols-2 xl:grid-cols-3">
+      <div className="order-2 col-span-1 lg:group-even:order-1">
         <motion.div
           variants={textVariants}
           whileInView={'fadeIn'}
           viewport={{ amount: 0.6 }}
           initial={isEven ? 'initialLeft' : 'initialRight'}
         >
-          <h3 className="mb-6 font-serif text-6xl font-bold italic">
+          <h3 className="mb-6 font-serif text-2xl italic md:text-4xl xl:text-6xl">
             {project.projectName}
           </h3>
           <p>{project.projectDescription}</p>
-          <div className="mt-12 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-4 md:mt-12">
             {project.techStack.map((techStack, index) => (
-              <Badge key={'techStack' + index} variant={'default'}>
+              <Badge
+                key={'techStack' + index}
+                variant={'default'}
+                className="text-sm md:text-base xl:text-lg"
+              >
                 {techStack}
               </Badge>
             ))}
           </div>
+          {project.projectLink ? (
+            <Link
+              href={project.projectLink}
+              passHref
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 block font-serif hover:underline md:text-xl"
+            >
+              Visit Website
+            </Link>
+          ) : (
+            <ProjectDrawer project={project} />
+          )}
         </motion.div>
       </div>
-      <div className="order-1 lg:col-span-2 lg:group-even:order-2">
+      <div className="order-1 lg:group-even:order-2 xl:col-span-2">
         <div className="aspect-video w-full">
-          <Link
-            href={project.projectLink || ''}
-            passHref
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Image
-              src={project.projectImage}
-              alt={project.projectName}
-              width={1920}
-              height={1080}
-              className="h-full w-full object-cover"
-            />
-          </Link>
+          <Image
+            src={project.projectImage}
+            alt={project.projectName}
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
     </div>

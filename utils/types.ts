@@ -6,6 +6,12 @@ export type ProjectType = {
   projectDescription: string
   projectImage: StaticImageData
   techStack: TechStackType[]
+  projectDetails?: ProjectDetailsType[]
+}
+
+export type ProjectDetailsType = {
+  title: string
+  images: StaticImageData[]
 }
 
 export type TechStackType =

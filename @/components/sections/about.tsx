@@ -15,12 +15,12 @@ const About = () => {
   }
 
   return (
-    <section className="container flex-col py-24">
+    <section className="container flex-col px-6 py-12 md:py-24 2xl:px-0">
       <motion.h2
         whileInView={'onscreen'}
         initial="offscreen"
         viewport={{ amount: 0.8 }}
-        className="font-serif text-8xl font-black italic leading-relaxed text-white"
+        className="font-serif text-4xl font-black italic !leading-relaxed text-white md:text-6xl xl:text-8xl"
       >
         Hi, I'm Spencer. <br />
         And{' '}
@@ -36,7 +36,7 @@ const About = () => {
         </span>
       </motion.h2>
       <div className="mt-12 flex justify-end">
-        <p className="w-2/3 text-2xl leading-relaxed text-white">
+        <p className="w-full text-lg leading-relaxed text-white md:w-2/3 md:text-2xl">
           A Malaysia-based Frontend Developer with 4 years of experience in the
           web industry, specializing in crafting UX-friendly, responsive, and
           high-performance websites. Proficient in technologies ranging from

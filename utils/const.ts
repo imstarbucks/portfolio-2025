@@ -10,8 +10,47 @@ import plenitude from '@/public/projects/plenitude-thumb.jpg'
 import sunway from '@/public/projects/sunway-money-thumb.jpg'
 import reflection from '@/public/projects/the-reflection-thumb.jpg'
 import pavilion from '@/public/projects/pmk-isp-thumb.jpg'
+import * as oceanBuddy from './ocean-buddy-img'
 
 export const projectsCollections: ProjectType[] = [
+  {
+    projectName: 'OceanBuddy',
+    projectDescription:
+      'OceanBuddy is a platform designed to connect divers and planners, enabling them to post and book diving trip plans seamlessly. The project leverages modern frontend technologies, including Next.js, React Hook Form, React Query, TailwindCSS, and Zustand, to deliver a responsive and user-friendly experience. It also incorporates REST API integrations to dynamically fetch and render data efficiently.',
+    projectImage: oceanBuddy.thumbnail,
+    techStack: [
+      'Next.js',
+      'React',
+      'Javascript',
+      'TailwindCSS',
+      'Typescript',
+      'SASS/SCSS',
+      'Zustand',
+      'next-intl',
+    ],
+    projectDetails: [
+      {
+        title: 'Landing Page',
+        images: [oceanBuddy.landingPage],
+      },
+      {
+        title: 'Listing Page',
+        images: [oceanBuddy.listingPage],
+      },
+      {
+        title: 'Trip Details Page',
+        images: [oceanBuddy.detailsPage],
+      },
+      {
+        title: 'Checkout Page',
+        images: [oceanBuddy.booking1, oceanBuddy.booking2, oceanBuddy.booking3],
+      },
+      {
+        title: 'User Profile Page',
+        images: [oceanBuddy.profilePage],
+      },
+    ],
+  },
   {
     projectName: 'Pavilion ISP',
     projectLink: 'https://pavilionmontkiara.com/PMKISP/en/',

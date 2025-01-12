@@ -42,8 +42,10 @@ const skillsCollection = [
 
 const Skills = () => {
   return (
-    <section id="#skills" className="container py-24">
-      <h2 className="mb-12 font-serif text-8xl italic text-white">Skills</h2>
+    <section id="#skills" className="2x;:px-0 container px-6 py-12 md:py-24">
+      <h2 className="mb-12 font-serif text-4xl italic text-white md:text-5xl xl:text-8xl">
+        Skills
+      </h2>
       {skillsCollection.map((skill, index) => (
         <Skill
           key={index}
@@ -105,23 +107,24 @@ const Skill = ({
       },
     },
   }
+
   return (
     <div>
       <motion.div
         variants={parentVariants}
         initial={'initial'}
         whileHover={'onhover'}
-        className="relative flex flex-col gap-5 py-10"
+        className="relative flex flex-col gap-5 py-6 md:py-10"
       >
         <motion.h4
           variants={textVariants}
-          className="relative z-10 font-serif text-6xl italic text-white"
+          className="relative z-10 font-serif text-2xl italic text-white md:text-4xl lg:text-5xl xl:text-6xl"
         >
           {title}
         </motion.h4>
         <motion.div
           variants={textVariants}
-          className="relative z-10 flex gap-x-6 text-3xl text-white"
+          className="relative z-10 flex flex-wrap gap-x-6 gap-y-2 text-lg text-white lg:text-3xl"
         >
           {skills.map((skill, index) => (
             <span key={'skill' + index} className="relative z-10">

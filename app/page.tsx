@@ -11,6 +11,9 @@ import { Box } from '@/@/components/shared/box'
 import About from '@/@/components/sections/about'
 import Skills from '@/@/components/sections/skills'
 import Projects from '@/@/components/sections/projects'
+import linkedInIcon from '@/public/social-icons/linkedin.svg'
+import githubIcon from '@/public/social-icons/github.svg'
+import gmailIcon from '@/public/social-icons/google.svg'
 
 export default function Home() {
   const introContainer = {
@@ -51,21 +54,21 @@ export default function Home() {
   return (
     <div className="bg-gray-950">
       <main>
-        <section className="mx-auto flex min-h-screen max-w-5xl items-center py-24">
-          <div className="grid grid-cols-4 gap-4">
+        <section className="mx-auto flex min-h-screen max-w-5xl items-center px-6 py-24">
+          <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
             {/* Intro */}
             <Box
               variant={'blue'}
-              className="col-span-2 row-span-2 w-full"
+              className="order-1 col-span-full row-span-2 w-full md:col-span-2"
               variants={introContainer}
               initial={'hidden'}
               animate={'show'}
             >
               <motion.h1
                 variants={introContainerH1}
-                className="font-serif text-8xl font-bold"
+                className="font-serif text-6xl font-bold md:text-8xl"
               >
-                Hey.
+                Hello.
               </motion.h1>
               <motion.p
                 variants={introContainerText}
@@ -90,7 +93,7 @@ export default function Home() {
                 repeatDelay: 2,
               }}
               variant={'purple'}
-              className="relative row-span-1 w-full"
+              className="relative order-2 col-span-2 row-span-1 w-full md:col-span-1"
               radius={'none'}
             >
               <svg viewBox="0 0 250 250" className="animate-spin-slow w-full">
@@ -108,13 +111,16 @@ export default function Home() {
             </Box>
 
             {/* Skills */}
-            <Box variant={'green'} className="relative row-span-2 w-full">
-              <h2 className="mb-4 text-center font-serif text-3xl font-bold">
+            <Box
+              variant={'green'}
+              className="relative order-5 col-span-full w-full md:order-3 md:col-span-1 md:row-span-2"
+            >
+              <h2 className="mb-4 hidden text-center font-serif text-3xl font-bold md:block">
                 Skills
               </h2>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-4 md:grid-cols-2">
                 <motion.div
-                  className="rounded-2xl bg-white p-4"
+                  className="h-fit w-fit rounded-2xl bg-white p-4"
                   whileHover={{
                     rotate: -10,
                     transition: {
@@ -131,10 +137,11 @@ export default function Home() {
                     alt="javascript"
                     width={100}
                     height={100}
+                    className="size-16"
                   />
                 </motion.div>
                 <motion.div
-                  className="rounded-2xl bg-white p-4"
+                  className="h-fit w-fit rounded-2xl bg-white p-4"
                   whileHover={{
                     rotate: 10,
                     transition: {
@@ -150,10 +157,11 @@ export default function Home() {
                     alt="typescript"
                     width={100}
                     height={100}
+                    className="size-16"
                   />
                 </motion.div>
                 <motion.div
-                  className="rounded-2xl bg-white p-4"
+                  className="h-fit w-fit rounded-2xl bg-white p-4"
                   whileHover={{
                     rotate: 10,
                     transition: {
@@ -164,10 +172,16 @@ export default function Home() {
                     transformOrigin: 'top left',
                   }}
                 >
-                  <Image src={reactIcon} alt="react" width={100} height={100} />
+                  <Image
+                    src={reactIcon}
+                    alt="react"
+                    width={100}
+                    height={100}
+                    className="size-16"
+                  />
                 </motion.div>
                 <motion.div
-                  className="rounded-2xl bg-white p-4"
+                  className="h-fit w-fit rounded-2xl bg-white p-4"
                   whileHover={{
                     rotate: -10,
                     transition: {
@@ -183,10 +197,11 @@ export default function Home() {
                     alt="nextjs"
                     width={100}
                     height={100}
+                    className="size-16"
                   />
                 </motion.div>
                 <motion.div
-                  className="rounded-2xl bg-white p-4"
+                  className="h-fit w-fit rounded-2xl bg-white p-4"
                   whileHover={{
                     rotate: -10,
                     transition: {
@@ -202,10 +217,11 @@ export default function Home() {
                     alt="taiwindcss"
                     width={100}
                     height={100}
+                    className="size-16"
                   />
                 </motion.div>
                 <motion.div
-                  className="rounded-2xl bg-white p-4"
+                  className="h-fit w-fit rounded-2xl bg-white p-4"
                   whileHover={{
                     rotate: -10,
                     transition: {
@@ -216,7 +232,13 @@ export default function Home() {
                     transformOrigin: 'left',
                   }}
                 >
-                  <Image src={css3Icon} alt="css3" width={100} height={100} />
+                  <Image
+                    src={css3Icon}
+                    alt="css3"
+                    width={100}
+                    height={100}
+                    className="size-16"
+                  />
                 </motion.div>
                 <div className="col-span-full mx-auto flex w-fit flex-col items-center text-center">
                   <motion.a
@@ -238,41 +260,29 @@ export default function Home() {
             </Box>
 
             {/* Contact / Socials */}
-            <Box variant={'red'} className="relative !block w-full">
+            <Box
+              variant={'red'}
+              className="relative order-3 !block w-full md:order-4"
+            >
               <div className="flex w-full flex-col justify-start gap-4">
                 <a
                   href="www.linkedin.com/in/spenwong"
                   target="_blank"
                   className="flex flex-col items-start justify-center gap-2"
                 >
-                  <h3 className="text-md font-bold text-red-900 underline">
-                    LinkedIn
-                  </h3>
-                  <span className="font-serif text-sm font-medium">
-                    linkedin.com/in/spenwong
-                  </span>
+                  <Image src={linkedInIcon} alt="LinkedIn" />
                 </a>
                 <a
                   href="mailto:spenwong98@gmail.com"
                   className="flex flex-col items-start justify-center gap-2"
                 >
-                  <h3 className="text-md font-bold text-red-900 underline">
-                    Gmail
-                  </h3>
-                  <span className="font-serif text-sm font-medium">
-                    spenwong98@gmail.com
-                  </span>
+                  <Image src={gmailIcon} alt="Gmail" />
                 </a>
                 <a
                   href="https://github.com/imstarbucks"
                   className="flex flex-col items-start justify-center gap-2"
                 >
-                  <h3 className="text-md font-bold text-red-900 underline">
-                    Github
-                  </h3>
-                  <span className="font-serif text-sm font-medium">
-                    github.com/imstarbucks
-                  </span>
+                  <Image src={gmailIcon} alt="Gmail" />
                 </a>
               </div>
             </Box>
@@ -280,7 +290,7 @@ export default function Home() {
             {/* Projects */}
             <Link
               href={'/projects'}
-              className="relative col-span-full inline-block w-full font-serif text-4xl font-bold"
+              className="relative order-4 col-span-full inline-block w-full font-serif text-4xl font-bold md:order-5"
             >
               <Box
                 variant={'amber'}
@@ -294,7 +304,7 @@ export default function Home() {
                   },
                 }}
               >
-                Past Experiences & Projects
+                My Projects
               </Box>
             </Link>
           </div>
