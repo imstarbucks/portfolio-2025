@@ -12,6 +12,7 @@ import reflection from '@/public/projects/the-reflection-thumb.jpg'
 import pavilion from '@/public/projects/pmk-isp-thumb.jpg'
 import * as oceanBuddy from './ocean-buddy-img'
 import * as mednefits from './mednefits-img'
+import * as mednefitsUI from './mednefitsUI'
 
 export const projectsCollections: ProjectType[] = [
   {
@@ -66,6 +67,50 @@ export const projectsCollections: ProjectType[] = [
     ],
   },
   {
+    projectName: 'Mednefits/UI',
+    projectDescription:
+      'Mednefits/UI is a proprietary library for reusable components across Mednefits portals, built with StorybookJS for UI testing, GitLab CI/CD for semantic versioning, and Slack integration for notifications.',
+    projectImage: mednefitsUI.thumbnail,
+    techStack: [
+      'StorybookJS',
+      'React',
+      'Typescript',
+      'Javascript',
+      'TailwindCSS',
+      'AWS',
+      'GitLab CI/CD',
+      'HTML',
+      'CSS',
+      'Vite',
+    ],
+    projectDetails: [
+      {
+        title: 'Introduction',
+        images: [mednefitsUI.intro],
+      },
+      {
+        title: 'Colors Design System',
+        images: [mednefitsUI.colors],
+      },
+      {
+        title: 'Typography Design System',
+        images: [mednefitsUI.typography],
+      },
+      {
+        title: 'Border Radius Design System',
+        images: [mednefitsUI.borderRadius],
+      },
+      {
+        title: 'Button Component',
+        images: [mednefitsUI.button],
+      },
+      {
+        title: 'Text Component',
+        images: [mednefitsUI.text],
+      },
+    ],
+  },
+  {
     projectName: 'OceanBuddy',
     projectDescription:
       'OceanBuddy is a platform designed to connect divers and planners, enabling them to post and book diving trip plans seamlessly. The project leverages modern frontend technologies, including Next.js, React Hook Form, React Query, TailwindCSS, and Zustand, to deliver a responsive and user-friendly experience. It also incorporates REST API integrations to dynamically fetch and render data efficiently.',
@@ -104,23 +149,7 @@ export const projectsCollections: ProjectType[] = [
       },
     ],
   },
-  {
-    projectName: 'Pavilion ISP',
-    projectLink: 'https://pavilionmontkiara.com/PMKISP/en/',
-    projectDescription:
-      'Developed a fully functional web application for the Pavilion Sales team, ensuring seamless navigation and a responsive design across all devices for efficient use of the sales portal.',
-    projectImage: pavilion,
-    techStack: [
-      'Next.js',
-      'React',
-      'Javascript',
-      'TailwindCSS',
-      'Typescript',
-      'SASS/SCSS',
-      'Zustand',
-      'next-intl',
-    ],
-  },
+
   {
     projectName: 'Amika',
     projectLink: 'https://amikaresidences.my/',
@@ -138,6 +167,23 @@ export const projectsCollections: ProjectType[] = [
       'Webpack',
       'Gulp',
       'PHP',
+    ],
+  },
+  {
+    projectName: 'Pavilion ISP',
+    projectLink: 'https://pavilionmontkiara.com/PMKISP/en/',
+    projectDescription:
+      'Developed a fully functional web application for the Pavilion Sales team, ensuring seamless navigation and a responsive design across all devices for efficient use of the sales portal.',
+    projectImage: pavilion,
+    techStack: [
+      'Next.js',
+      'React',
+      'Javascript',
+      'TailwindCSS',
+      'Typescript',
+      'SASS/SCSS',
+      'Zustand',
+      'next-intl',
     ],
   },
   {
