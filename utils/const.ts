@@ -18,7 +18,7 @@ export const projectsCollections: ProjectType[] = [
   {
     projectName: 'Mednefits',
     projectDescription:
-      'Mednefits is a web application designed to manage employee benefits. It includes portals for users, administrators, and providers. The platform is built using Next.js 14, leveraging Zustand for state management, TanStack Table for advanced table functionalities, and NextAuth for JWT-based authentication. It features complex multi-step forms implemented with React Hook Form, ShadCN UI, and a custom in-house UI library. The application also integrates extensively with REST APIs to carry out various functionalities.',
+      'Mednefits is a Next.js 14 web application for managing employee benefits, offering portals for users, administrators, and providers. It utilizes Zustand for state management, TanStack Table for advanced tables, and NextAuth for JWT-based authentication. Key features include complex multi-step forms built with React Hook Form, ShadCN UI, and a custom UI library, along with extensive REST API integrations.',
     projectImage: mednefits.thumbnail,
     techStack: [
       'Next.js',
