@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import Footer from '@/@/components/sections/footer'
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${merriweather.variable} ${inter.variable} scroll-smooth bg-gray-950 antialiased`}
       >
         <SpeedInsights />
+        <Analytics />
         {children}
         <Footer />
       </body>
