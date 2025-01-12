@@ -32,7 +32,17 @@ const skillsCollection = [
   },
   {
     title: 'API Integration & Backend',
-    skill: ['API Integration', 'Strapi', 'WordPress CMS', 'AWS', 'NextAuth'],
+    skill: [
+      'Axios',
+      'tanstack-query',
+      'Strapi',
+      'WordPress CMS',
+      'AWS',
+      'NextAuth',
+      'PHP',
+      'Go',
+      'Django',
+    ],
   },
   {
     title: 'SEO & Performance Optimization',
@@ -40,9 +50,20 @@ const skillsCollection = [
   },
 ]
 
+const variants = {
+  transition: {
+    staggerChildren: 0.5,
+  },
+}
+
 const Skills = () => {
   return (
-    <section id="#skills" className="2x;:px-0 container px-6 py-12 md:py-24">
+    <motion.section
+      variants={variants}
+      whileInView={'onhover'}
+      id="skills"
+      className="2x;:px-0 container px-6 py-12 md:py-24"
+    >
       <h2 className="mb-12 font-serif text-4xl italic text-white md:text-5xl xl:text-8xl">
         Skills
       </h2>
@@ -54,7 +75,7 @@ const Skills = () => {
           index={index}
         />
       ))}
-    </section>
+    </motion.section>
   )
 }
 

@@ -1,4 +1,6 @@
+import { Download } from 'lucide-react'
 import * as motion from 'motion/react-client'
+import Link from 'next/link'
 
 const About = () => {
   const webKeyWord = {
@@ -35,8 +37,8 @@ const About = () => {
           .
         </span>
       </motion.h2>
-      <div className="mt-12 flex justify-end">
-        <p className="w-full text-lg leading-relaxed text-white md:w-2/3 md:text-2xl">
+      <div className="mt-12 flex flex-col items-center md:items-end">
+        <p className="w-full text-lg !leading-relaxed text-white md:text-2xl lg:w-2/3">
           A Malaysia-based Frontend Developer with 4 years of experience in the
           web industry, specializing in crafting UX-friendly, responsive, and
           high-performance websites. Proficient in technologies ranging from
@@ -46,6 +48,14 @@ const About = () => {
           leveraging cutting-edge tools and frameworks to build scalable,
           user-centered applications that make a lasting impact.
         </p>
+        <Link
+          href={'/documents/resume.pdf'}
+          className="relative mt-8 flex w-fit items-center justify-center gap-2 font-bold text-white xl:text-2xl"
+        >
+          Download CV
+          <Download className="size-6 xl:size-8" />
+          <div className="absolute bottom-0 top-auto h-2 w-full translate-y-2 bg-blue-700"></div>
+        </Link>
       </div>
     </section>
   )
