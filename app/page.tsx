@@ -282,7 +282,7 @@ export default function Home() {
                   href="https://github.com/imstarbucks"
                   className="flex flex-col items-start justify-center gap-2"
                 >
-                  <Image src={gmailIcon} alt="Gmail" />
+                  <Image src={githubIcon} alt="GitHub" />
                 </a>
               </div>
             </Box>
